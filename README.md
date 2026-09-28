@@ -24,7 +24,7 @@ Keyboard: `N` new card, `F` flip, `←` `→` earlier and later cards.
 
 ## The deck
 
-1,960 words in 49 categories, enough for 122 cards before anything repeats (the original box has 65). Asian and Southeast Asian
+1,920 words in 48 categories, enough for 120 cards before anything repeats (the original box has 65). Asian and Southeast Asian
 references run all through it: K-pop and K-dramas, anime, satay and bánh mì,
 Songkran and Hari Raya, Grab and Shopee, the Merlion and the Petronas Towers.
 
@@ -37,7 +37,7 @@ Songkran and Hari Raya, Grab and Shopee, the Merlion and the Petronas Towers.
 | Food | Street Food, Meal or Dish, Snack or Dessert, Drink, Fruit or Veggie |
 | Nature & Science | Wild Animal, Pet, Weather & Nature, Outer Space, Science & Tech |
 | Places & Travel | Famous Landmark, City or Country, Place in Town, Travel & Vacation, Vehicle |
-| Play | Sport, Hobby, Dance Move, Toy or Game |
+| Play | Sport, Hobby, Toy or Game |
 | Words & Actions | Slang, Saying or Idiom, Feeling or Mood, Action |
 | Stories & Occasions | Fairy Tale or Myth, Mythical Creature, Celebration |
 

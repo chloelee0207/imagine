@@ -1,4 +1,4 @@
-// Play: sports, hobbies, dances, toys and games.
+// Play: sports, hobbies, toys and games.
 (window.REIMAGINE_DATA = window.REIMAGINE_DATA || []).push({
   group: "Play",
   categories: [
@@ -28,20 +28,6 @@
         "Playing Piano", "Stargazing", "Kite Flying", "Calligraphy", "Embroidery",
         "Video Editing", "Sudoku", "Crossword", "Paddleboarding", "Roller Skating",
         "Line Dancing", "Painting", "Sewing", "Playing Guitar", "Stamp Collecting"
-      ]
-    },
-    {
-      id: "dance",
-      name: "Dance Move",
-      words: [
-        "The Floss", "The Dab", "The Robot", "Moonwalk", "The Worm",
-        "Macarena", "Running Man", "Shuffle", "The Griddy", "YMCA",
-        "Cha-Cha Slide", "Conga Line", "Limbo", "Tango", "Headspin",
-        "Cartwheel", "The Splits", "Tap Dance", "Ballet Pirouette", "Hula",
-        "Irish Jig", "Waltz", "Disco Point", "Vogue", "The Carlton",
-        "Thriller Dance", "Sprinkler", "Twist", "Air Guitar", "Jazz Hands",
-        "Hokey Pokey", "Bunny Hop", "Lion Dance", "Dragon Dance", "Bollywood Dance",
-        "Belly Dance", "Zumba", "Flash Mob", "Headbanging", "Can-Can"
       ]
     },
     {
