@@ -87,22 +87,28 @@ async function main() {
   await page.waitForSelector(".row");
   check(JSON.stringify(await readCard(page)) === JSON.stringify(shown), "the current card is still there after a reload");
 
-  // Flip and spotlight.
-  await page.click("#sideB");
-  check(await page.$eval("#flipper", (el) => el.classList.contains("flipped")), "Side B flips the card");
+  // Drag the card sideways to turn it over; it springs back on a short drag.
+  const box = await page.$eval("#stage", (el) => el.getBoundingClientRect().toJSON());
+  const drag = async (dx) => {
+    const y = box.top + 200;
+    const x = box.left + box.width / 2;
+    await page.mouse.move(x, y);
+    await page.mouse.down();
+    for (let k = 1; k <= 8; k++) await page.mouse.move(x + (dx * k) / 8, y);
+    await page.mouse.up();
+    await page.waitForTimeout(650);
+  };
+  const sideName = () => page.textContent("#sideName");
+  await drag(30);
+  check((await sideName()) === "Side A", "a short drag springs back to Side A");
+  await drag(-160);
+  check((await sideName()) === "Side B", "dragging left turns the card to Side B");
   check(await page.$eval("#faceA", (el) => el.inert), "the hidden side is inert on phones");
-  await page.waitForTimeout(650);
+  check(!(await page.$eval("#faceB", (el) => el.inert)), "the side on show is not inert");
   if (SHOTS) await page.screenshot({ path: path.join(SHOTS, "phone-side-b.png") });
-  await page.click("#sideA");
-  await page.waitForTimeout(650);
-  await page.click("#roll");
-  await page.waitForTimeout(700);
-  const lit = await page.$$eval("#faceA .row.on", (rows) => rows.map((r) => r.dataset.num));
-  check(lit.length === 1, `rolling spotlights one number (${lit.join(",")})`);
-  await page.click(`#faceA .row[data-num="${lit[0]}"] .num`);
-  check((await page.$$("#faceA .row.on")).length === 0, "tapping the spotlit number clears it");
-  await page.click('#faceA .row[data-num="3"] .num');
-  if (SHOTS) await page.screenshot({ path: path.join(SHOTS, "phone-spotlight.png") });
+  await drag(160);
+  check((await sideName()) === "Side A", "dragging right turns it back to Side A");
+  check(await page.$$eval(".num", (nums) => nums.every((n) => n.tagName === "SPAN")), "row numbers are plain labels");
 
   // Categories: limit to one and deal from it only.
   await page.click("#openCats");
@@ -115,7 +121,8 @@ async function main() {
   const emojiCard = (await readCard(page)).flat();
   check(emojiCard.every((r) => r.cat === "Emoji"), "with one category on, every row comes from it");
   check(new Set(emojiCard.map((r) => r.word)).size === 16, "…and still no repeated word on the card");
-  check((await page.textContent("#catCount")).trim() === "1/45", "the header shows 1/45 categories");
+  const catTotal = await page.evaluate(() => window.REIMAGINE_DATA.flatMap((g) => g.categories).length);
+  check((await page.textContent("#catCount")).trim() === `1/${catTotal}`, `the header shows 1/${catTotal} categories`);
   await page.click("#openCats");
   await page.click("#allCats");
   await page.click("#catsDone");
@@ -149,7 +156,7 @@ async function main() {
   await desk.waitForSelector(".row");
   const [a, b] = await Promise.all([desk.$eval("#faceA", (e) => e.getBoundingClientRect().toJSON()), desk.$eval("#faceB", (e) => e.getBoundingClientRect().toJSON())]);
   check(Math.abs(a.top - b.top) < 1 && b.left >= a.right, "desktop shows both sides next to each other");
-  check(!(await desk.isVisible(".sides")), "side switch is hidden on desktop");
+  check(!(await desk.isVisible(".sidehint")), "the swipe hint is hidden on desktop");
   await desk.keyboard.press("n");
   check((await desk.textContent("#cardNo")).trim() !== "", "N key draws a card");
   if (SHOTS) await desk.screenshot({ path: path.join(SHOTS, "desktop.png"), fullPage: true });

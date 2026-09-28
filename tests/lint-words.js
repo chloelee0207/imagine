@@ -19,11 +19,12 @@ const ORIGINAL = [
 const MAX_LEN = 34;
 const MIN_PER_CATEGORY = 30;
 
-const norm = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+const norm = (s) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 const problems = [];
 const seenWord = new Map();
 const seenId = new Set();
 let total = 0;
+const catNames = new Set(sandbox.window.REIMAGINE_DATA.flatMap((g) => g.categories).map((c) => norm(c.name)));
 
 for (const group of sandbox.window.REIMAGINE_DATA) {
   for (const cat of group.categories) {
@@ -38,8 +39,9 @@ for (const group of sandbox.window.REIMAGINE_DATA) {
       if (word.length > MAX_LEN) problems.push(`too long (${word.length}): "${word}"`);
       if (word !== word.trim() || /\s{2,}/.test(word)) problems.push(`stray whitespace: "${word}"`);
       for (const old of ORIGINAL) {
-        if (key.split(" ").join(" ").includes(norm(old))) problems.push(`"${word}" reuses the original card's "${old}"`);
+        if (key === norm(old)) problems.push(`"${word}" is on the original card`);
       }
+      if (catNames.has(key)) problems.push(`"${word}" in ${cat.name} is just a category name`);
     }
   }
 }

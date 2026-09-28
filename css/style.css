@@ -156,30 +156,35 @@ main {
 }
 .cardno b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
 
-.sides {
+.sidehint {
   display: inline-flex;
-  padding: 3px;
-  border: 1.5px solid var(--line);
-  border-radius: 999px;
-}
-.sides button {
-  min-height: 36px;
-  padding: 0 16px;
-  border: 0;
-  border-radius: 999px;
-  background: transparent;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
   color: var(--muted);
-  font-weight: 500;
-  cursor: pointer;
+  font-size: 0.9rem;
 }
-.sides button[aria-pressed="true"] { background: var(--ink); color: var(--ground); }
+#sideName { color: var(--ink); font-weight: 500; }
+.dots { display: inline-flex; gap: 5px; }
+.dots i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--muted);
+}
+.dots i:first-child, .flipped-b .dots i:last-child { background: var(--ink); border-color: var(--ink); }
+.flipped-b .dots i:first-child { background: transparent; border-color: var(--muted); }
 
 /* ---------- the card ---------- */
 
 .stage {
   perspective: 1600px;
   touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: grab;
 }
+.stage.dragging { cursor: grabbing; }
 
 .flipper {
   display: grid;
@@ -188,7 +193,6 @@ main {
   transform-style: preserve-3d;
   transition: transform 0.55s cubic-bezier(0.3, 0.7, 0.2, 1);
 }
-.flipper.flipped { transform: rotateY(180deg); }
 
 .face {
   grid-area: 1 / 1;
@@ -226,7 +230,6 @@ main {
   grid-template-columns: 3.2rem 1fr;
   grid-template-rows: auto 1fr;
   border-top: 2px solid var(--crimson);
-  transition: opacity 0.2s ease;
 }
 .row:first-child { border-top: 0; }
 
@@ -243,12 +246,10 @@ main {
   font-weight: 500;
   line-height: 1;
   font-variant-numeric: tabular-nums;
-  cursor: pointer;
 }
 .row:nth-child(even) .num { background: var(--navy); }
 .row:first-child .num { border-top-left-radius: 11px; }
 .row:last-child .num { border-bottom-left-radius: 11px; }
-.num:focus-visible { outline-offset: -4px; outline-color: #fff; }
 
 .cat {
   padding: 7px 12px 5px;
@@ -271,11 +272,6 @@ main {
   text-wrap: balance;
 }
 
-/* Spotlight a called number: everything else steps back. */
-.rows.spot .row { opacity: 0.3; }
-.rows.spot .row.on { opacity: 1; }
-.rows.spot .row.on .num { background: var(--crimson); }
-
 .deal .rows { animation: deal 0.32s cubic-bezier(0.2, 0.8, 0.2, 1); }
 @keyframes deal {
   from { transform: translateY(14px) rotate(-0.8deg); }
@@ -284,7 +280,8 @@ main {
 
 /* Wide screens: lay both sides out next to each other. */
 @media (min-width: 860px) {
-  .sides { display: none; }
+  .sidehint { display: none; }
+  .stage { cursor: auto; }
   .flipper {
     grid-template-columns: 1fr 1fr;
     gap: 28px;
@@ -339,31 +336,6 @@ main {
 
 .small { min-height: 38px; padding: 0 14px; font-size: 0.9rem; border-radius: 999px; }
 
-.tools {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 10px 16px;
-  max-width: 460px;
-  width: 100%;
-  margin-inline: auto;
-}
-
-.roll {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 46px;
-  padding: 0 18px 0 14px;
-  border-radius: 999px;
-  font-weight: 500;
-}
-.roll svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; }
-.roll svg circle { fill: currentColor; stroke: none; }
-.roll.rolled { border-color: var(--crimson); }
-#rollLabel { font-variant-numeric: tabular-nums; }
-
 .status {
   margin: 0;
   color: var(--muted);
@@ -373,24 +345,10 @@ main {
 }
 
 @media (min-width: 860px) {
-  .actions, .tools { max-width: 560px; }
+  .actions { max-width: 560px; }
 }
 
-/* ---------- how-to and footer ---------- */
-
-.howto {
-  max-width: 460px;
-  width: 100%;
-  margin: 8px auto 0;
-  padding: 16px 18px 16px 38px;
-  border: 1.5px dashed var(--line);
-  border-radius: 14px;
-  color: var(--muted);
-  font-size: 0.92rem;
-}
-.howto li + li { margin-top: 6px; }
-.howto li::marker { color: var(--ink); font-weight: 600; }
-.howto em { font-style: normal; color: var(--ink); font-weight: 500; }
+/* ---------- footer ---------- */
 
 .foot {
   max-width: 560px;
@@ -493,6 +451,6 @@ dialog::backdrop { background: var(--backdrop); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .flipper, .row { transition: none; }
+  .flipper { transition: none; }
   .deal .rows { animation: none; }
 }

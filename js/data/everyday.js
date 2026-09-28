@@ -10,10 +10,10 @@
         "Selfie Stick", "Ring Light", "Robot Vacuum", "Smart Speaker", "Electric Scooter",
         "E-Reader", "Power Bank", "Fitness Tracker", "GoPro", "Nintendo Switch",
         "Tablet", "Laptop", "Wireless Charger", "Noise-Cancelling Headphones", "Video Doorbell",
-        "Smart Thermostat", "3D Printer", "Hoverboard", "Instant Camera", "Bluetooth Speaker",
-        "Game Controller", "Webcam", "Stylus", "AirTag", "Robot Lawn Mower",
-        "Dashcam", "Smart Glasses", "Foldable Phone", "Massage Gun", "Label Maker",
-        "Metal Detector", "Walkie-Talkie", "Night-Vision Goggles", "Karaoke Microphone", "Digital Photo Frame"
+        "3D Printer", "Hoverboard", "Instant Camera", "Portable Speaker", "Game Controller",
+        "Webcam", "AirTag", "Dashcam", "Foldable Phone", "Massage Gun",
+        "Walkie-Talkie", "Digital Camera", "Handheld Fan", "Massage Chair", "Calculator",
+        "Hair Dryer", "Smart Glasses", "Mechanical Keyboard", "Walkman", "Charging Cable"
       ]
     },
     {
@@ -25,9 +25,9 @@
         "Light Switch", "Remote Control", "Shower Curtain", "Bathtub", "Rubber Duck",
         "Alarm Clock", "Fireplace", "Chandelier", "Rocking Chair", "Mailbox",
         "Garden Gnome", "Bean Bag Chair", "Scented Candle", "Coat Hanger", "Plunger",
-        "Broom", "Vacuum Cleaner", "Dishwasher", "Fridge Magnet", "Junk Drawer",
-        "Toilet Paper", "Bookshelf", "Weighted Blanket", "Baby Monitor", "Snow Globe",
-        "Air Purifier", "Humidifier", "Extension Cord", "Wind Chime", "Spiral Staircase"
+        "Broom", "Vacuum Cleaner", "Air Conditioner", "Photo Frame", "Junk Drawer",
+        "Toilet Paper", "Bookshelf", "Weighted Blanket", "Mosquito Net", "Shoe Rack",
+        "Snow Globe", "Wind Chime", "Lucky Waving Cat", "Air Purifier", "Spiral Staircase"
       ]
     },
     {
@@ -40,8 +40,8 @@
         "Can Opener", "Chopsticks", "Ice Cube Tray", "Lunchbox", "Measuring Cup",
         "Salt Shaker", "Pepper Grinder", "Lazy Susan", "Egg Timer", "Stand Mixer",
         "Slow Cooker", "Espresso Machine", "Popcorn Maker", "Ladle", "Tongs",
-        "Apron", "Rice Cooker", "Mortar and Pestle", "Dish Rack", "Kitchen Sponge",
-        "Pressure Cooker", "Garlic Press", "Nutcracker", "Cookie Cutter", "Reusable Water Bottle"
+        "Apron", "Rice Cooker", "Wok", "Bamboo Steamer", "Mortar and Pestle",
+        "Dish Rack", "Kitchen Sponge", "Thermos", "Cookie Cutter", "Reusable Water Bottle"
       ]
     },
     {
@@ -51,11 +51,11 @@
         "Crocs", "Bucket Hat", "Hoodie", "Onesie", "Scrunchie",
         "Belt Bag", "Beanie", "Flip-Flops", "Sunglasses", "Tiara",
         "Bow Tie", "Cowboy Boots", "Tuxedo", "Wedding Dress", "Pajamas",
-        "Raincoat", "Ski Goggles", "Swim Cap", "Headband", "Backpack",
-        "Tote Bag", "Sneakers", "High Heels", "Mittens", "Scarf",
-        "Tie-Dye Shirt", "Cardigan", "Overalls", "Kilt", "Poncho",
-        "Beret", "Top Hat", "Leg Warmers", "Puffer Jacket", "Friendship Bracelet",
-        "Claw Clip", "Cargo Pants", "Ugly Christmas Sweater", "Tracksuit", "Toe Socks"
+        "Raincoat", "Ski Goggles", "Headband", "Backpack", "Sneakers",
+        "High Heels", "Mittens", "Scarf", "Tie-Dye Shirt", "Cardigan",
+        "Overalls", "Kilt", "Poncho", "Beret", "Top Hat",
+        "Puffer Jacket", "Friendship Bracelet", "Face Mask", "Kimono", "Hanbok",
+        "Conical Hat", "Batik Shirt", "Cheongsam", "Ugly Christmas Sweater", "Tracksuit"
       ]
     },
     {
@@ -63,28 +63,27 @@
       name: "Modern Life",
       words: [
         "Group Chat", "Working from Home", "Video Call", "Self-Checkout", "Screen Time",
-        "Online Shopping", "Food Delivery", "Doomscrolling", "Selfie", "Voice Memo",
+        "Online Shopping", "Food Delivery", "Doomscrolling", "Online Class", "Voice Message",
         "Captcha", "Password Reset", "Low Battery", "Out of Office", "Verification Code",
         "QR Code Menu", "Airplane Mode", "Autocorrect", "Read Receipt", "Unsubscribe",
-        "Binge-Watching", "Podcast", "Livestream", "Unboxing Video", "Subscription Box",
-        "Electric Car", "Ride Share", "Tiny House", "Meal Prep", "Digital Detox",
-        "Buffering", "Wi-Fi Password", "Spam Call", "Push Notification", "Dark Mode",
-        "Tap to Pay", "AI Chatbot", "Smart Home", "Sourdough Starter", "Parcel Locker"
+        "Binge-Watching", "Podcast", "Livestream", "Unboxing Video", "Electric Car",
+        "Ride-Hailing", "Meal Prep", "Digital Detox", "Buffering", "Wi-Fi Password",
+        "Spam Call", "Push Notification", "Dark Mode", "Tap to Pay", "E-Wallet",
+        "AI Chatbot", "Smart Home", "Flash Sale", "Tiny House", "Sourdough Starter"
       ]
     },
     {
       id: "job",
       name: "Job",
       words: [
-        "YouTuber", "Influencer", "Delivery Driver", "Barista", "Dog Walker",
+        "YouTuber", "Influencer", "Delivery Rider", "Barista", "Dog Walker",
         "Personal Trainer", "Game Developer", "Zookeeper", "Astronaut", "Firefighter",
         "Surgeon", "Veterinarian", "Lifeguard", "DJ", "Chef",
-        "Pilot", "Plumber", "Electrician", "Tattoo Artist", "Wedding Planner",
-        "Magician", "Park Ranger", "Beekeeper", "Lumberjack", "Mail Carrier",
+        "Pilot", "Flight Attendant", "Plumber", "Electrician", "Tattoo Artist",
+        "Fashion Designer", "Magician", "Park Ranger", "Beekeeper", "Mail Carrier",
         "Barber", "Dentist", "Detective", "Referee", "Architect",
-        "Florist", "Photographer", "Stunt Double", "Puppeteer", "Scientist",
-        "Drone Pilot", "Podcaster", "Ski Instructor", "Crossing Guard", "Window Washer",
-        "Air Traffic Controller", "Robot Engineer", "Ice Sculptor", "Mime", "Storm Chaser"
+        "Florist", "Photographer", "Stunt Double", "K-pop Idol", "Taxi Driver",
+        "Ski Instructor", "Crossing Guard", "Window Washer", "Storm Chaser", "Mime"
       ]
     }
   ]

@@ -1,61 +1,75 @@
-// Food: trends, treats, dishes and drinks.
+// Food: street food, dishes, treats, drinks, fruit and veg.
 (window.REIMAGINE_DATA = window.REIMAGINE_DATA || []).push({
   group: "Food",
   categories: [
     {
-      id: "foodtrend",
-      name: "Food Trend",
+      id: "street",
+      name: "Street Food",
       words: [
-        "Avocado Toast", "Bubble Tea", "Sushi Burrito", "Poke Bowl", "Charcuterie Board",
-        "Butter Board", "Rainbow Bagel", "Unicorn Frappuccino", "Birria Tacos", "Dalgona Coffee",
-        "Cauliflower Pizza", "Oat Milk", "Kombucha", "Açaí Bowl", "Cloud Bread",
-        "Pancake Cereal", "Smash Burger", "Hot Honey", "Matcha Latte", "Cake Pops",
-        "Korean Corn Dog", "Pumpkin Spice Latte", "Plant-Based Burger", "Mochi Ice Cream", "Crookie",
-        "Cottage Cheese Ice Cream", "Pickle Juice Slushie", "Protein Pancakes", "Bento Cake", "Cronut",
-        "Baked Feta Pasta", "Ramen Burger", "Charcoal Ice Cream", "Freakshake", "Ube Latte",
-        "Hot Chocolate Bomb", "Rolled Ice Cream", "Salad in a Jar", "Tanghulu", "Cucumber Salad"
-      ]
-    },
-    {
-      id: "sweet",
-      name: "Snack or Dessert",
-      words: [
-        "Popcorn", "Nachos", "Soft Pretzel", "Churros", "Ice Cream Sandwich",
-        "S'mores", "Cupcake", "Donut", "Macaron", "Brownie",
-        "Cheesecake", "Popsicle", "Cotton Candy", "Gummy Bears", "Chocolate Fountain",
-        "Tiramisu", "Waffle Cone", "Fortune Cookie", "Rice Krispie Treat", "Candy Cane",
-        "Lollipop", "Pop-Tart", "Trail Mix", "Hot Cheetos", "Oreo",
-        "Jelly Beans", "Marshmallow", "Banana Split", "Apple Pie", "Crème Brûlée",
-        "Cinnamon Roll", "Funnel Cake", "Caramel Apple", "Fruit Roll-Up", "Crêpe",
-        "Pudding Cup", "Gingerbread House", "Birthday Cake", "Chocolate Chip Cookie", "Sprinkles"
+        "Satay", "Takoyaki", "Bánh Mì", "Tteokbokki", "Roti Canai",
+        "Spring Rolls", "Dim Sum", "Korean Corn Dog", "Egg Waffle", "Taiyaki",
+        "Hotteok", "Fish Balls", "Tanghulu", "Stinky Tofu", "Nasi Lemak",
+        "Char Kway Teow", "Laksa", "Pad Thai", "Mango Sticky Rice", "Churros",
+        "Crêpe", "Hot Dog", "Tacos", "Falafel", "Shawarma",
+        "Soft Pretzel", "Grilled Corn", "Kebab", "Empanada", "Samosa",
+        "Pani Puri", "Grilled Squid", "Tornado Potato", "Fish and Chips", "Bao Bun",
+        "Onigiri", "Okonomiyaki", "Kaya Toast", "Banana Fritters", "Loaded Fries"
       ]
     },
     {
       id: "dish",
       name: "Meal or Dish",
       words: [
-        "Tacos", "Ramen", "Pad Thai", "Burrito", "Sushi",
-        "Pizza", "Lasagna", "Mac and Cheese", "Hot Dog", "Cheeseburger",
-        "Spaghetti and Meatballs", "Paella", "Curry", "Dumplings", "Pho",
-        "Bibimbap", "Fish and Chips", "Grilled Cheese", "Stack of Pancakes", "Omelette",
-        "Caesar Salad", "Chili", "Poutine", "Falafel", "Shawarma",
-        "Quesadilla", "Cheese Fondue", "BBQ Ribs", "Corn Dog", "Hot Pot",
-        "Tikka Masala", "Jollof Rice", "Empanada", "Croissant", "Bagel and Cream Cheese",
-        "Bowl of Cereal", "Thanksgiving Turkey", "Lobster Roll", "Deep-Dish Pizza", "Breakfast Burrito"
+        "Pizza", "Cheeseburger", "Sushi", "Ramen", "Burrito",
+        "Pho", "Fried Rice", "Nasi Goreng", "Curry", "Dumplings",
+        "Hot Pot", "Korean BBQ", "Bibimbap", "Kimchi", "Spaghetti and Meatballs",
+        "Lasagna", "Mac and Cheese", "Hainanese Chicken Rice", "Grilled Cheese", "Stack of Pancakes",
+        "Omelette", "Caesar Salad", "Steak", "Paella", "Tom Yum Soup",
+        "Beef Rendang", "Peking Duck", "Sashimi", "Tempura", "Katsu Curry",
+        "Bento Box", "Poke Bowl", "Avocado Toast", "Cheese Fondue", "Croissant",
+        "Bowl of Cereal", "Instant Noodles", "BBQ Ribs", "Biryani", "Tikka Masala"
+      ]
+    },
+    {
+      id: "sweet",
+      name: "Snack or Dessert",
+      words: [
+        "Popcorn", "Nachos", "Ice Cream Sandwich", "S'mores", "Cupcake",
+        "Donut", "Macaron", "Brownie", "Cheesecake", "Popsicle",
+        "Cotton Candy", "Gummy Bears", "Chocolate Fountain", "Tiramisu", "Fortune Cookie",
+        "Candy Cane", "Lollipop", "Oreo", "Pocky", "Mochi",
+        "Mooncake", "Egg Tart", "Pineapple Tart", "Halo-Halo", "Bingsu",
+        "Kit Kat", "Potato Chips", "Seaweed Snacks", "Prawn Crackers", "Birthday Cake",
+        "Chocolate Chip Cookie", "Marshmallow", "Banana Split", "Apple Pie", "Cinnamon Roll",
+        "Waffle", "Pudding", "Pandan Cake", "Ais Kacang", "Jelly Beans"
       ]
     },
     {
       id: "drink",
       name: "Drink",
       words: [
-        "Iced Coffee", "Smoothie", "Lemonade", "Hot Chocolate", "Milkshake",
-        "Energy Drink", "Sparkling Water", "Coconut Water", "Green Tea", "Cappuccino",
-        "Slushie", "Root Beer Float", "Orange Juice", "Chocolate Milk", "Mocktail",
-        "Sports Drink", "Protein Shake", "Chai Latte", "Sweet Tea", "Eggnog",
-        "Apple Cider", "Shirley Temple", "Horchata", "Thai Iced Tea", "Arnold Palmer",
-        "Cold Brew", "Frozen Lemonade", "Watermelon Juice", "Tomato Juice", "Yerba Mate",
-        "Cucumber Water", "Mango Lassi", "Fruit Punch", "Turkish Coffee", "Italian Soda",
-        "Hot Tea with Honey", "Ginger Ale", "Cola", "Pink Lemonade", "Aguas Frescas"
+        "Bubble Tea", "Iced Coffee", "Smoothie", "Lemonade", "Hot Chocolate",
+        "Milkshake", "Energy Drink", "Coconut Water", "Green Tea", "Matcha Latte",
+        "Cappuccino", "Slushie", "Root Beer Float", "Orange Juice", "Chocolate Milk",
+        "Milo", "Teh Tarik", "Thai Iced Tea", "Vietnamese Iced Coffee", "Yakult",
+        "Soy Milk", "Sugarcane Juice", "Iced Lemon Tea", "Chai Latte", "Pumpkin Spice Latte",
+        "Kombucha", "Sparkling Water", "Sports Drink", "Protein Shake", "Mocktail",
+        "Cola", "Ginger Ale", "Mango Lassi", "Dalgona Coffee", "Cold Brew",
+        "Frappuccino", "Fruit Punch", "Watermelon Juice", "Lime Juice", "Americano"
+      ]
+    },
+    {
+      id: "fruit",
+      name: "Fruit or Veggie",
+      words: [
+        "Durian", "Mango", "Dragon Fruit", "Mangosteen", "Lychee",
+        "Rambutan", "Jackfruit", "Coconut", "Pineapple", "Watermelon",
+        "Banana", "Avocado", "Strawberry", "Cherry", "Grapes",
+        "Lemon", "Kiwi", "Pomegranate", "Blueberry", "Peach",
+        "Pear", "Papaya", "Passion Fruit", "Starfruit", "Broccoli",
+        "Chili Pepper", "Mushroom", "Garlic", "Onion", "Pumpkin",
+        "Carrot", "Potato", "Tomato", "Cucumber", "Bok Choy",
+        "Eggplant", "Sweet Potato", "Lettuce", "Cabbage", "Ginger"
       ]
     }
   ]

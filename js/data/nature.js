@@ -6,15 +6,14 @@
       id: "animal",
       name: "Wild Animal",
       words: [
-        "Axolotl", "Capybara", "Red Panda", "Sloth", "Narwhal",
-        "Platypus", "Quokka", "Honey Badger", "Pangolin", "Meerkat",
-        "Flamingo", "Peacock", "Penguin", "Octopus", "Jellyfish",
-        "Seahorse", "Chameleon", "Koala", "Kangaroo", "Pygmy Hippo",
-        "Giraffe", "Zebra", "Cheetah", "Gorilla", "Snowy Owl",
-        "Beaver", "Raccoon", "Sea Otter", "Walrus", "Hammerhead Shark",
-        "Dolphin", "Blue Whale", "Bumblebee", "Monarch Butterfly", "Ladybug",
-        "Scorpion", "Poison Dart Frog", "Sea Turtle", "Komodo Dragon", "Pufferfish",
-        "Porcupine", "Toucan", "Anteater", "Polar Bear", "Firefly"
+        "Giant Panda", "Tiger", "Orangutan", "Komodo Dragon", "Red Panda",
+        "Sloth", "Capybara", "Axolotl", "Narwhal", "Platypus",
+        "Koala", "Kangaroo", "Penguin", "Flamingo", "Peacock",
+        "Octopus", "Jellyfish", "Seahorse", "Chameleon", "Giraffe",
+        "Zebra", "Cheetah", "Gorilla", "Owl", "Raccoon",
+        "Sea Otter", "Walrus", "Shark", "Dolphin", "Blue Whale",
+        "Bumblebee", "Butterfly", "Ladybug", "Scorpion", "Sea Turtle",
+        "Pufferfish", "Porcupine", "Polar Bear", "Firefly", "Crocodile"
       ]
     },
     {
@@ -22,13 +21,13 @@
       name: "Pet",
       words: [
         "Corgi", "Pug", "Dachshund", "Poodle", "Golden Retriever",
-        "Chihuahua", "Husky", "Dalmatian", "Great Dane", "French Bulldog",
-        "Beagle", "German Shepherd", "Labradoodle", "Shiba Inu", "Pomeranian",
-        "Sphynx Cat", "Maine Coon", "Persian Cat", "Hamster", "Guinea Pig",
-        "Goldfish", "Parrot", "Bunny", "Tortoise", "Ferret",
-        "Hermit Crab", "Bearded Dragon", "Budgie", "Chinchilla", "Pet Tarantula",
-        "Mini Pig", "Pony", "Cockatoo", "Betta Fish", "Robot Dog",
-        "Tamagotchi", "Pet Rock", "Border Collie", "Bernese Mountain Dog", "Cat in a Box"
+        "Chihuahua", "Husky", "Dalmatian", "French Bulldog", "Beagle",
+        "German Shepherd", "Shiba Inu", "Pomeranian", "Sphynx Cat", "Maine Coon",
+        "Persian Cat", "Hamster", "Guinea Pig", "Goldfish", "Parrot",
+        "Rabbit", "Tortoise", "Ferret", "Hermit Crab", "Bearded Dragon",
+        "Budgie", "Chinchilla", "Betta Fish", "Koi", "Mini Pig",
+        "Pony", "Cockatoo", "Robot Dog", "Pet Rock", "Border Collie",
+        "Samoyed", "Ragdoll Cat", "Hedgehog", "Cat in a Box", "Sugar Glider"
       ]
     },
     {
@@ -39,10 +38,10 @@
         "Avalanche", "Northern Lights", "Solar Eclipse", "Heat Wave", "Hailstorm",
         "Thunderstorm", "Lightning Bolt", "Fog", "Waterfall", "Glacier",
         "Iceberg", "Desert", "Rainforest", "Coral Reef", "Cave",
-        "Geyser", "Canyon", "Sand Dune", "Quicksand", "Whirlpool",
-        "Snowflake", "Icicle", "Sunset", "Full Moon", "Hurricane",
+        "Geyser", "Lagoon", "Sand Dune", "Quicksand", "Whirlpool",
+        "Snowflake", "Icicle", "Sunset", "Full Moon", "Typhoon",
         "Monsoon", "Wildfire", "Oasis", "Swamp", "Cherry Blossom",
-        "Autumn Leaves", "Double Rainbow", "Blizzard", "Puddle", "Tide Pool"
+        "Autumn Leaves", "Bamboo Forest", "Blizzard", "Puddle", "Rice Terraces"
       ]
     },
     {
@@ -63,15 +62,14 @@
       id: "tech",
       name: "Science & Tech",
       words: [
-        "Artificial Intelligence", "Robot", "DNA", "Vaccine", "Microscope",
-        "Magnet", "Battery", "Wi-Fi", "Bluetooth", "Cloud Storage",
-        "Virtual Reality", "Augmented Reality", "Hologram", "Self-Driving Car", "Solar Panel",
-        "Wind Turbine", "Recycling", "Bitcoin", "NFT", "Metaverse",
-        "Computer Virus", "Hashtag", "Algorithm", "Deepfake", "Barcode",
-        "QR Code", "GPS", "Touchscreen", "Face ID", "Fingerprint Scanner",
-        "5G", "Coding", "Dinosaur Fossil", "Periodic Table", "Test Tube",
-        "Lab Coat", "Laser", "X-Ray", "Atom", "Magnifying Glass",
-        "Thermometer", "Cloning", "Time Machine", "Jetpack", "Invisibility Cloak"
+        "Microchip", "DNA", "Vaccine", "Microscope", "Magnet",
+        "Light Bulb", "Jetpack", "Bluetooth", "Cloud Storage", "Invisibility Cloak",
+        "Augmented Reality", "Hologram", "Self-Driving Car", "Solar Panel", "Wind Turbine",
+        "Recycling", "Bitcoin", "NFT", "Metaverse", "Computer Virus",
+        "Hashtag", "Algorithm", "Deepfake", "Barcode", "GPS",
+        "Touchscreen", "Face ID", "Fingerprint Scanner", "5G", "Coding",
+        "Dinosaur Fossil", "Periodic Table", "Test Tube", "Lab Coat", "Laser",
+        "X-Ray", "Atom", "Magnifying Glass", "Time Machine", "Thermometer"
       ]
     }
   ]

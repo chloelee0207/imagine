@@ -56,12 +56,12 @@
   const saved = load();
   const state = {
     used: new Set(Array.isArray(saved.used) ? saved.used : []),
-    enabled: new Set((Array.isArray(saved.enabled) ? saved.enabled : CATS.map((c) => c.id)).filter((id) => CAT_BY_ID.has(id))),
+    // Stored as the categories switched off, so ones added later start switched on.
+    enabled: new Set(CATS.map((c) => c.id).filter((id) => !(Array.isArray(saved.off) && saved.off.includes(id)))),
     history: Array.isArray(saved.history) ? saved.history.filter(isCard) : [],
     count: Number.isFinite(saved.count) ? saved.count : 0,
     index: 0,
-    side: 0,
-    spot: 0,
+    angle: 0, // card rotation in degrees; odd multiples of 180 show side B
   };
   if (!state.enabled.size) CATS.forEach((c) => state.enabled.add(c.id));
   state.index = Math.min(Math.max(Number.isFinite(saved.index) ? saved.index : Infinity, 0), state.history.length - 1);
@@ -71,7 +71,7 @@
     try {
       localStorage.setItem(STORE_KEY, JSON.stringify({
         used: [...state.used],
-        enabled: [...state.enabled],
+        off: CATS.map((c) => c.id).filter((id) => !state.enabled.has(id)),
         history: state.history,
         index: state.index,
         count: state.count,
@@ -137,8 +137,7 @@
     });
     if (state.history.length > HISTORY_MAX) state.history.splice(0, state.history.length - HISTORY_MAX);
     state.index = state.history.length - 1;
-    state.side = 0;
-    state.spot = 0;
+    state.angle = 0;
     save();
     return reshuffled;
   }
@@ -152,11 +151,9 @@
     li.className = "row";
     li.dataset.num = String(num);
 
-    const n = document.createElement("button");
-    n.type = "button";
+    const n = document.createElement("span");
     n.className = "num";
     n.textContent = String(num);
-    n.setAttribute("aria-label", "Spotlight number " + num);
 
     const cat = document.createElement("span");
     cat.className = "cat";
@@ -179,7 +176,6 @@
     $("prev").disabled = state.index <= 0;
     $("next").disabled = state.index >= state.history.length - 1;
     renderSide(true);
-    renderSpot();
     if (animate && !calm.matches) {
       const stage = $("stage");
       stage.classList.remove("deal");
@@ -188,32 +184,21 @@
     }
   }
 
+  const sideShown = () => (((state.angle / 180) % 2) + 2) % 2;
+
   function renderSide(instant) {
     const flipper = $("flipper");
     if (instant) flipper.style.transition = "none";
-    flipper.classList.toggle("flipped", state.side === 1);
+    flipper.style.transform = "rotateY(" + state.angle + "deg)";
     if (instant) {
       void flipper.offsetWidth;
       flipper.style.transition = "";
     }
-    $("sideA").setAttribute("aria-pressed", String(state.side === 0));
-    $("sideB").setAttribute("aria-pressed", String(state.side === 1));
+    const side = sideShown();
+    $("sideName").textContent = side ? "Side B" : "Side A";
+    document.querySelector(".sidehint").classList.toggle("flipped-b", side === 1);
     // On phones only one side is on screen; keep the hidden one out of tab order.
-    faces.forEach((face, i) => { face.inert = !wide.matches && i !== state.side; });
-  }
-
-  function renderSpot() {
-    faces.forEach((face) => {
-      const rows = face.querySelector(".rows");
-      rows.classList.toggle("spot", state.spot > 0);
-      rows.querySelectorAll(".row").forEach((row) => {
-        const on = Number(row.dataset.num) === state.spot;
-        row.classList.toggle("on", on);
-        row.querySelector(".num").setAttribute("aria-pressed", String(on));
-      });
-    });
-    $("roll").classList.toggle("rolled", state.spot > 0);
-    $("rollLabel").textContent = state.spot ? "Number " + state.spot + " · roll again" : "Roll a number";
+    faces.forEach((face, i) => { face.inert = !wide.matches && i !== side; });
   }
 
   function renderStatus(message) {
@@ -251,45 +236,15 @@
     const next = state.index + delta;
     if (next < 0 || next >= state.history.length) return;
     state.index = next;
-    state.side = 0;
-    state.spot = 0;
+    state.angle = 0;
     save();
     renderCard(false);
   }
 
-  function setSide(side) {
-    if (state.side === side) return;
-    state.side = side;
+  // dir > 0 turns the card to the right, dir < 0 to the left.
+  function flip(dir) {
+    state.angle += dir > 0 ? 180 : -180;
     renderSide(false);
-  }
-
-  function spotlight(num) {
-    state.spot = state.spot === num ? 0 : num;
-    renderSpot();
-  }
-
-  let rolling = 0;
-  function roll() {
-    if (rolling) return;
-    const target = 1 + randInt(PER_SIDE);
-    if (calm.matches) {
-      state.spot = target;
-      renderSpot();
-      return;
-    }
-    let ticks = 0;
-    rolling = window.setInterval(() => {
-      ticks += 1;
-      if (ticks < 7) {
-        state.spot = 1 + randInt(PER_SIDE);
-        renderSpot();
-        return;
-      }
-      window.clearInterval(rolling);
-      rolling = 0;
-      state.spot = target;
-      renderSpot();
-    }, 70);
   }
 
   let resetTimer = 0;
@@ -399,44 +354,63 @@
   $("draw").addEventListener("click", draw);
   $("prev").addEventListener("click", () => go(-1));
   $("next").addEventListener("click", () => go(1));
-  $("sideA").addEventListener("click", () => setSide(0));
-  $("sideB").addEventListener("click", () => setSide(1));
-  $("roll").addEventListener("click", roll);
   $("reset").addEventListener("click", reset);
   $("openCats").addEventListener("click", openCategories);
   $("allCats").addEventListener("click", () => setAll(true));
   $("noCats").addEventListener("click", () => setAll(false));
 
-  $("stage").addEventListener("click", (e) => {
-    const num = e.target.closest(".num");
-    if (num) spotlight(Number(num.textContent));
+  // Drag or swipe the card sideways to turn it over (when one side shows at a time).
+  // The card follows the finger, then finishes the turn or springs back.
+  const stage = $("stage");
+  const flipper = $("flipper");
+  let drag = null;
+
+  stage.addEventListener("pointerdown", (e) => {
+    if (wide.matches || (e.pointerType === "mouse" && e.button !== 0)) return;
+    drag = { id: e.pointerId, x: e.clientX, y: e.clientY, active: false };
   });
 
-  // Swipe sideways on the card to flip it (phones).
-  let touchStart = null;
-  $("stage").addEventListener("pointerdown", (e) => {
-    if (e.pointerType !== "mouse") touchStart = { x: e.clientX, y: e.clientY };
+  stage.addEventListener("pointermove", (e) => {
+    if (!drag || e.pointerId !== drag.id) return;
+    const dx = e.clientX - drag.x;
+    const dy = e.clientY - drag.y;
+    if (!drag.active) {
+      if (Math.abs(dy) > 12 && Math.abs(dy) > Math.abs(dx)) {
+        drag = null; // a scroll, not a flip
+        return;
+      }
+      if (Math.abs(dx) < 8) return;
+      drag.active = true;
+      stage.classList.add("dragging");
+      stage.setPointerCapture(e.pointerId);
+      flipper.style.transition = "none";
+    }
+    const tilt = Math.max(-100, Math.min(100, dx * 0.45));
+    flipper.style.transform = "rotateY(" + (state.angle + tilt) + "deg)";
   });
-  $("stage").addEventListener("pointerup", (e) => {
-    if (!touchStart || wide.matches) return;
-    const dx = e.clientX - touchStart.x;
-    const dy = e.clientY - touchStart.y;
-    touchStart = null;
-    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) setSide(state.side === 0 ? 1 : 0);
-  });
-  $("stage").addEventListener("pointercancel", () => { touchStart = null; });
+
+  function endDrag(e, cancelled) {
+    if (!drag || e.pointerId !== drag.id) return;
+    const { active, x } = drag;
+    drag = null;
+    if (!active) return;
+    stage.classList.remove("dragging");
+    flipper.style.transition = "";
+    const dx = e.clientX - x;
+    if (!cancelled && Math.abs(dx) > 45) flip(dx);
+    else renderSide(false);
+  }
+  stage.addEventListener("pointerup", (e) => endDrag(e, false));
+  stage.addEventListener("pointercancel", (e) => endDrag(e, true));
 
   document.addEventListener("keydown", (e) => {
     if (dialog.open || e.metaKey || e.ctrlKey || e.altKey) return;
     if (e.target.closest && e.target.closest("input, textarea, select")) return;
     const k = e.key.toLowerCase();
     if (k === "n") draw();
-    else if (k === "f") setSide(state.side === 0 ? 1 : 0);
-    else if (k === "r") roll();
+    else if (k === "f") flip(1);
     else if (e.key === "ArrowLeft") go(-1);
     else if (e.key === "ArrowRight") go(1);
-    else if (/^[1-8]$/.test(e.key)) spotlight(Number(e.key));
-    else if (e.key === "Escape" && state.spot) spotlight(state.spot);
     else return;
     e.preventDefault();
   });

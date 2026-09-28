@@ -1,4 +1,4 @@
-// Words: slang, sayings, feelings and everyday actions.
+// Words & actions: slang, sayings, feelings and everyday actions.
 (window.REIMAGINE_DATA = window.REIMAGINE_DATA || []).push({
   group: "Words & Actions",
   categories: [
@@ -12,8 +12,8 @@
         "Delulu", "Situationship", "Touch Grass", "NPC", "Understood the Assignment",
         "Rent Free", "Glow Up", "Big Mood", "Caught in 4K", "Mid",
         "Red Flag", "Green Flag", "The Ick", "Hits Different", "Aura Points",
-        "Brain Rot", "Cooked", "Spill the Tea", "Say Less", "Ate and Left No Crumbs",
-        "Side Quest", "Chef's Kiss", "Periodt", "Cheugy", "Boujee"
+        "Brain Rot", "Cooked", "Spill the Tea", "Say Less", "Side Quest",
+        "Chef's Kiss", "Boujee", "Kawaii", "Senpai", "Otaku"
       ]
     },
     {
@@ -37,11 +37,11 @@
         "Hangry", "Starstruck", "Brain Freeze", "Déjà Vu", "Stage Fright",
         "Sugar Rush", "Food Coma", "Homesick", "Nostalgia", "Road Rage",
         "Sunday Scaries", "Cabin Fever", "Secondhand Embarrassment", "Writer's Block", "Burnout",
-        "Main Character Energy", "Imposter Syndrome", "Seasick", "Lovesick", "Awkward Silence",
-        "Heartbreak", "Sore Loser", "Adrenaline Rush", "Goosebumps", "Gobsmacked",
-        "Zen", "Grumpy", "Bored Out of Your Mind", "Puppy Love", "Midlife Crisis",
-        "Brain Fog", "Runner's High", "Post-Vacation Blues", "Monday Blues", "Snack Attack",
-        "Nervous", "Sleepy", "Proud Parent", "Jealous", "Giddy"
+        "Imposter Syndrome", "Seasick", "Lovesick", "Awkward Silence", "Heartbreak",
+        "Sore Loser", "Adrenaline Rush", "Goosebumps", "Gobsmacked", "Zen",
+        "Cranky", "Bored Out of Your Mind", "Puppy Love", "Midlife Crisis", "Brain Fog",
+        "Runner's High", "Post-Vacation Blues", "Monday Blues", "Snack Attack", "Nervous",
+        "Sleepy", "Proud Parent", "Jealous", "Giddy", "Fangirling"
       ]
     },
     {
@@ -53,9 +53,9 @@
         "Texting While Walking", "Charging Your Phone", "Ordering Takeout", "Tying Shoelaces", "Blowing Out Candles",
         "Making the Bed", "Taking Out the Trash", "Mowing the Lawn", "Washing Dishes", "Changing a Diaper",
         "Waiting in Line", "Tripping Over", "Hailing a Taxi", "Missing the Bus", "Losing Your Keys",
-        "Stubbing Your Toe", "Applying Sunscreen", "Swiping Right", "Taking a Nap", "Stretching",
-        "Brushing Your Hair", "Doing a Handstand", "Skipping Rope", "Whistling", "Winking",
-        "Arm Wrestling", "Thumb War", "High Five", "Photobombing", "Sliding into DMs"
+        "Stubbing Your Toe", "Applying Sunscreen", "Swiping Right", "Taking a Nap", "Finger Heart",
+        "Bowing", "Slurping Noodles", "Haggling at a Market", "Doing a Handstand", "Skipping Rope",
+        "Whistling", "Winking", "Thumb War", "High Five", "Photobombing"
       ]
     }
   ]

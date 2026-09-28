@@ -28,10 +28,10 @@
   <main>
     <div class="cardbar">
       <p class="cardno">Card <b id="cardNo">1</b></p>
-      <div class="sides" role="group" aria-label="Card side">
-        <button type="button" id="sideA" aria-pressed="true">Side A</button>
-        <button type="button" id="sideB" aria-pressed="false">Side B</button>
-      </div>
+      <p class="sidehint" aria-live="polite">
+        <span class="dots" aria-hidden="true"><i></i><i></i></span>
+        <span id="sideName">Side A</span><span class="swipe">· swipe to flip</span>
+      </p>
     </div>
 
     <section id="stage" class="stage" aria-label="Current card">
@@ -57,19 +57,7 @@
       </button>
     </div>
 
-    <div class="tools">
-      <button type="button" id="roll" class="secondary roll">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="8.5" cy="8.5" r="1.4"/><circle cx="15.5" cy="15.5" r="1.4"/><circle cx="12" cy="12" r="1.4"/></svg>
-        <span id="rollLabel">Roll a number</span>
-      </button>
-      <p id="status" class="status" aria-live="polite"></p>
-    </div>
-
-    <ol class="howto" aria-label="How to play a turn">
-      <li>Draw a card.</li>
-      <li>Someone calls a number from 1 to 8, or tap <em>Roll a number</em>. Tap any number on the card to spotlight it.</li>
-      <li>Say the category out loud, then build your clue with the transparent cards.</li>
-    </ol>
+    <p id="status" class="status" aria-live="polite"></p>
   </main>
 
   <footer class="foot">

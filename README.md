@@ -12,34 +12,31 @@ install.
 
 ## At the table
 
-1. Tap **Draw a new card**. You get a two-sided card with 8 numbered
-   category and word pairs per side, 16 words in all, just like the printed
-   cards.
-2. Someone calls a number from 1 to 8, or tap **Roll a number**. Tapping a
-   number on the card spotlights that row and dims the rest.
-3. Say the category out loud, then build your clue with the transparent cards
-   from the box.
+Tap **Draw a new card** for a two-sided card with 8 numbered category and word
+pairs per side, 16 words in all, just like the printed cards. The player next
+to you calls the number as usual.
 
-On a phone, switch sides with **Side A / Side B** or swipe across the card. On
-a wider screen both sides sit next to each other. The screen stays awake while
-the page is open, where the browser allows it.
+On a phone, swipe the card left or right to turn it over. On a wider screen
+both sides sit next to each other. The screen stays awake while the page is
+open, where the browser allows it.
 
-Keyboard: `N` new card, `F` flip, `R` roll, `1`–`8` spotlight, `←` `→` earlier
-and later cards.
+Keyboard: `N` new card, `F` flip, `←` `→` earlier and later cards.
 
 ## The deck
 
-1,833 words in 45 categories, enough for 114 cards before anything repeats (the original box has 65).
+1,960 words in 49 categories, enough for 122 cards before anything repeats (the original box has 65). Asian and Southeast Asian
+references run all through it: K-pop and K-dramas, anime, satay and bánh mì,
+Songkran and Hari Raya, Grab and Shopee, the Merlion and the Petronas Towers.
 
 | Group | Categories |
 | --- | --- |
-| Screen | Streaming Series, Recent Movie, Animated Character, Superhero or Villain, Movie or TV Character |
-| People & Music | Pop Star, Hit Song, Athlete, Movie Star, Internet Star, History Maker |
+| Screen | Streaming Series, Recent Movie, Animated Character, Anime & Manga, Superhero or Villain, Movie or TV Character |
+| People & Music | Pop Star, Hit Song, Athlete, Movie Star, Famous Personality, History Maker |
 | Online | Video Game, Game Character, App or Website, Viral Moment, Emoji |
 | Everyday | Gadget, Around the House, In the Kitchen, Something to Wear, Modern Life, Job |
-| Food | Food Trend, Snack or Dessert, Meal or Dish, Drink |
+| Food | Street Food, Meal or Dish, Snack or Dessert, Drink, Fruit or Veggie |
 | Nature & Science | Wild Animal, Pet, Weather & Nature, Outer Space, Science & Tech |
-| Places | Famous Landmark, Place in Town, Travel & Vacation |
+| Places & Travel | Famous Landmark, City or Country, Place in Town, Travel & Vacation, Vehicle |
 | Play | Sport, Hobby, Dance Move, Toy or Game |
 | Words & Actions | Slang, Saying or Idiom, Feeling or Mood, Action |
 | Stories & Occasions | Fairy Tale or Myth, Mythical Creature, Celebration |
@@ -82,7 +79,7 @@ node tests/lint-words.js
 ```
 index.html          page shell
 css/style.css       card look, layout, light and dark themes
-js/app.js           dealing, no-repeat memory, history, categories, roll
+js/app.js           dealing, no-repeat memory, history, categories, swipe to flip
 js/data/*.js        the categories and words, one file per group
 tests/lint-words.js word list checks
 tests/app.test.js   browser test (dealing, repeats, history, layout)
@@ -111,6 +108,11 @@ One-time setup, needed because a workflow token is not allowed to create a
 Pages site: go to **Settings → Pages → Build and deployment** and set
 **Source** to **GitHub Actions**. Then re-run the latest workflow (or push any
 commit).
+
+**Deploy from a branch** (branch `claude/imagine-card-generator-uvihp1`, folder
+`/ (root)`) works just as well, because nothing is built. If you switch to it,
+delete `.github/workflows/pages.yml`, which is only needed for the GitHub
+Actions source.
 
 ---
 

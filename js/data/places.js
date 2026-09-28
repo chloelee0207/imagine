@@ -1,6 +1,6 @@
-// Places: landmarks, spots around town and travel.
+// Places & travel: landmarks, cities, spots around town, trips and vehicles.
 (window.REIMAGINE_DATA = window.REIMAGINE_DATA || []).push({
-  group: "Places",
+  group: "Places & Travel",
   categories: [
     {
       id: "landmark",
@@ -10,39 +10,66 @@
         "Colosseum", "Big Ben", "Golden Gate Bridge", "Sydney Opera House", "Leaning Tower of Pisa",
         "Mount Rushmore", "Stonehenge", "Machu Picchu", "Christ the Redeemer", "Burj Khalifa",
         "Times Square", "Hollywood Sign", "Niagara Falls", "Grand Canyon", "Mount Everest",
-        "Space Needle", "Las Vegas Strip", "Buckingham Palace", "Louvre Pyramid", "Sagrada Família",
-        "Angkor Wat", "Petra", "Easter Island Heads", "Tower Bridge", "Neuschwanstein Castle",
-        "Gateway Arch", "Mount Fuji", "Venice Canals", "Great Barrier Reef", "Great Sphinx",
-        "Empire State Building", "Alcatraz", "Hoover Dam", "Atomium", "Las Vegas Sphere"
+        "Mount Fuji", "Petronas Twin Towers", "Marina Bay Sands", "Merlion", "Angkor Wat",
+        "Borobudur", "Ha Long Bay", "Taipei 101", "Fushimi Inari Gates", "Shibuya Crossing",
+        "Forbidden City", "Terracotta Army", "Gardens by the Bay", "Chocolate Hills", "Great Barrier Reef",
+        "Louvre Pyramid", "Sagrada Família", "Easter Island Heads", "Buckingham Palace", "Empire State Building"
+      ]
+    },
+    {
+      id: "city",
+      name: "City or Country",
+      words: [
+        "Tokyo", "Seoul", "Bangkok", "Singapore", "Bali",
+        "Hong Kong", "Kuala Lumpur", "Manila", "Hanoi", "Beijing",
+        "Shanghai", "Phuket", "Osaka", "Kyoto", "Mumbai",
+        "Dubai", "Paris", "London", "New York", "Rome",
+        "Venice", "Las Vegas", "Los Angeles", "Rio de Janeiro", "Mexico",
+        "Egypt", "Hawaii", "Iceland", "Switzerland", "Antarctica",
+        "Alaska", "Amsterdam", "Maldives", "India", "Italy",
+        "Australia", "Canada", "Brazil", "Greece", "Ireland"
       ]
     },
     {
       id: "town",
       name: "Place in Town",
       words: [
-        "Escape Room", "Trampoline Park", "Dog Park", "Food Truck", "Farmers Market",
-        "Car Wash", "Laundromat", "Drive-Thru", "Bowling Alley", "Skate Park",
-        "Arcade", "Karaoke Bar", "Coworking Space", "Pet Store", "Nail Salon",
-        "Barbershop", "Climbing Gym", "Yoga Studio", "Movie Theater", "Library",
-        "Aquarium", "Zoo", "Hospital", "Airport", "Train Station",
-        "EV Charging Station", "Playground", "Water Park", "Ice Rink", "Bakery",
-        "Pharmacy", "Post Office", "Fire Station", "Thrift Store", "Pop-Up Shop",
-        "Cat Café", "Axe-Throwing Bar", "Rage Room", "Night Market", "Amusement Park",
-        "Shopping Mall", "Supermarket", "Drive-In Theater", "Go-Kart Track", "Ice Cream Parlor"
+        "Night Market", "Hawker Centre", "Pharmacy", "Capsule Hotel", "Photo Booth",
+        "Cat Café", "Escape Room", "Trampoline Park", "Dog Park", "Food Truck",
+        "Farmers Market", "Car Wash", "Laundromat", "Drive-Thru", "Bowling Alley",
+        "Skate Park", "Arcade", "Coworking Space", "Pet Store", "Nail Salon",
+        "Thrift Store", "Gym", "Movie Theater", "Library", "Aquarium",
+        "Zoo", "Hospital", "Post Office", "Train Station", "Playground",
+        "Water Park", "Ice Rink", "Bakery", "Convenience Store", "Temple",
+        "Hot Spring", "Wet Market", "Amusement Park", "Shopping Mall", "Rage Room"
       ]
     },
     {
       id: "travel",
       name: "Travel & Vacation",
       words: [
-        "Road Trip", "Cruise Ship", "Camping", "Glamping", "Backpacking",
-        "Jet Lag", "Passport", "Boarding Pass", "Suitcase", "Carry-On",
-        "Airport Security", "Room Service", "Vacation Rental", "Hostel", "Safari",
-        "Scuba Diving", "Snorkeling", "Ski Trip", "Beach Day", "Sunburn",
-        "Souvenir", "Postcard", "Travel Pillow", "Tour Guide", "Hot-Air Balloon",
-        "Sleeper Train", "Layover", "Lost Luggage", "Duty-Free", "Tan Lines",
-        "All-Inclusive Resort", "Staycation", "Van Life", "Honeymoon", "Spring Break",
-        "Time Zone", "Currency Exchange", "Hiking Trail", "National Park", "Window Seat"
+        "Road Trip", "Camping", "Glamping", "Backpacking", "Jet Lag",
+        "Passport", "Boarding Pass", "Suitcase", "Carry-On", "Airport Security",
+        "Room Service", "Hotel Buffet", "Hostel", "Safari", "Scuba Diving",
+        "Snorkeling", "Ski Trip", "Beach Day", "Sunburn", "Souvenir",
+        "Postcard", "Travel Pillow", "Tour Guide", "Island Hopping", "Layover",
+        "Lost Luggage", "Duty-Free", "Tan Lines", "All-Inclusive Resort", "Staycation",
+        "Honeymoon", "Spring Break", "Time Zone", "Currency Exchange", "Hiking Trail",
+        "National Park", "Window Seat", "Travel Adapter", "Sleeper Train", "Tourist Map"
+      ]
+    },
+    {
+      id: "vehicle",
+      name: "Vehicle",
+      words: [
+        "Tuk-Tuk", "Jeepney", "Bullet Train", "Double-Decker Bus", "Cable Car",
+        "Gondola", "Submarine", "Monster Truck", "Ice Cream Truck", "Fire Engine",
+        "Ambulance", "Helicopter", "Jet Ski", "Tram", "Private Jet",
+        "Tractor", "Garbage Truck", "School Bus", "Limousine", "Segway",
+        "Unicycle", "Tandem Bike", "Rickshaw", "Hot-Air Balloon", "Cruise Ship",
+        "Sailboat", "Speedboat", "Canoe", "Blimp", "Race Car",
+        "Police Car", "Camper Van", "Bulldozer", "Snowmobile", "Forklift",
+        "Motorcycle", "Batmobile", "Magic Carpet", "Pirate Ship", "Hovercraft"
       ]
     }
   ]

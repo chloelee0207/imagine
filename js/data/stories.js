@@ -1,4 +1,4 @@
-// Stories: fairy tales, myths, creatures and celebrations.
+// Stories & occasions: fairy tales, myths, creatures and celebrations.
 (window.REIMAGINE_DATA = window.REIMAGINE_DATA || []).push({
   group: "Stories & Occasions",
   categories: [
@@ -7,13 +7,13 @@
       name: "Fairy Tale or Myth",
       words: [
         "Cinderella", "Snow White", "Rapunzel", "Little Red Riding Hood", "The Three Little Pigs",
-        "Goldilocks", "Jack and the Beanstalk", "Hansel and Gretel", "Sleeping Beauty", "The Little Mermaid",
+        "Goldilocks", "Jack and the Beanstalk", "Hansel and Gretel", "Sleeping Beauty", "The Emperor's New Clothes",
         "Pinocchio", "Peter Pan", "Aladdin", "Medusa", "Hercules",
-        "Zeus", "Poseidon", "Pandora's Box", "Trojan Horse", "Robin Hood",
-        "King Arthur", "Excalibur", "Pied Piper", "Tooth Fairy", "Easter Bunny",
-        "Santa Claus", "The Frog Prince", "Gingerbread Man", "Humpty Dumpty", "Rumpelstiltskin",
-        "Beauty and the Beast", "Achilles' Heel", "Icarus", "Atlantis", "Midas Touch",
-        "The Tortoise and the Hare", "The Boy Who Cried Wolf", "Alice in Wonderland", "The Princess and the Pea", "The Ugly Duckling"
+        "Zeus", "Pandora's Box", "Trojan Horse", "Robin Hood", "King Arthur",
+        "Tooth Fairy", "Easter Bunny", "Santa Claus", "The Frog Prince", "Gingerbread Man",
+        "Humpty Dumpty", "Beauty and the Beast", "Icarus", "Atlantis", "Midas Touch",
+        "The Tortoise and the Hare", "The Boy Who Cried Wolf", "Alice in Wonderland", "The Ugly Duckling", "Monkey King",
+        "Mulan", "Chang'e the Moon Goddess", "Momotaro the Peach Boy", "Ali Baba", "Poseidon"
       ]
     },
     {
@@ -22,12 +22,12 @@
       words: [
         "Unicorn", "Dragon", "Mermaid", "Phoenix", "Griffin",
         "Pegasus", "Kraken", "Yeti", "Bigfoot", "Loch Ness Monster",
-        "Vampire", "Werewolf", "Zombie", "Mummy", "Fairy",
+        "Vampire", "Werewolf", "Zombie", "Mummy", "Dwarf",
         "Troll", "Goblin", "Ogre", "Elf", "Centaur",
-        "Leprechaun", "Gnome", "Cyclops", "Minotaur", "Kitsune",
-        "Chupacabra", "Hydra", "Banshee", "Sea Serpent", "Genie",
-        "Frankenstein's Monster", "Mothman", "Cerberus", "Basilisk", "Jackalope",
-        "Headless Horseman", "Golem", "Wizard", "Witch on a Broom", "Haunted Doll"
+        "Leprechaun", "Sphinx", "Cyclops", "Minotaur", "Nine-Tailed Fox",
+        "Kappa", "Oni", "Pontianak", "Garuda", "Genie",
+        "Hydra", "Banshee", "Sea Serpent", "Frankenstein's Monster", "Cerberus",
+        "Basilisk", "Headless Horseman", "Golem", "Wizard", "Witch on a Broom"
       ]
     },
     {
@@ -35,13 +35,13 @@
       name: "Celebration",
       words: [
         "Birthday Party", "Wedding", "Baby Shower", "Gender Reveal", "Graduation",
-        "Prom", "Halloween", "Thanksgiving", "Christmas Morning", "Hanukkah",
-        "Diwali", "Lunar New Year", "Easter Egg Hunt", "Valentine's Day", "St. Patrick's Day",
-        "Fourth of July", "New Year's Eve", "Mardi Gras", "Oktoberfest", "Día de los Muertos",
-        "Holi", "April Fools' Day", "Mother's Day", "Groundhog Day", "Earth Day",
-        "Super Bowl Party", "Housewarming", "Surprise Party", "Sleepover", "Family Reunion",
-        "Retirement Party", "Anniversary", "Quinceañera", "Tailgate", "Talent Show",
-        "Music Festival", "Friendsgiving", "Black Friday", "Leap Day", "Pride Parade"
+        "Prom", "Halloween", "Christmas Morning", "Lunar New Year", "Mid-Autumn Festival",
+        "Songkran", "Hari Raya", "Diwali", "Holi", "Pride Parade",
+        "Lantern Festival", "Loy Krathong", "Singles' Day Sale", "Valentine's Day", "New Year's Eve",
+        "Easter Egg Hunt", "Thanksgiving", "St. Patrick's Day", "Mardi Gras", "Oktoberfest",
+        "Día de los Muertos", "April Fools' Day", "Mother's Day", "Housewarming", "Surprise Party",
+        "Sleepover", "Family Reunion", "Anniversary", "Music Festival", "Black Friday",
+        "Fireworks Show", "Red Envelopes", "Hanukkah", "Talent Show", "Retirement Party"
       ]
     }
   ]
