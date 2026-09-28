@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reimagine Cards</title>
+<meta name="description" content="Draw brand-new challenge cards for Imagine, the visual charades game: 16 fresh category and word pairs per card.">
+<meta name="theme-color" content="#dde7e6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1618" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2310807a'/%3E%3Crect x='11' width='21' height='32' fill='%23f7fafa'/%3E%3Crect x='11' y='15' width='21' height='2.5' fill='%23c4214d'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand">
+      <p class="wordmark"><span>Re</span>imagine</p>
+      <p class="tagline">New cards for Imagine, the visual charades game</p>
+    </div>
+    <button type="button" id="openCats" class="ghost" aria-haspopup="dialog">
+      Categories <span id="catCount" class="count">45/45</span>
+    </button>
+  </header>
+
+  <main>
+    <div class="cardbar">
+      <p class="cardno">Card <b id="cardNo">1</b></p>
+      <div class="sides" role="group" aria-label="Card side">
+        <button type="button" id="sideA" aria-pressed="true">Side A</button>
+        <button type="button" id="sideB" aria-pressed="false">Side B</button>
+      </div>
+    </div>
+
+    <section id="stage" class="stage" aria-label="Current card">
+      <div id="flipper" class="flipper">
+        <article id="faceA" class="face" aria-label="Side A">
+          <p class="face-label">Side A</p>
+          <ol class="rows"></ol>
+        </article>
+        <article id="faceB" class="face face-b" aria-label="Side B">
+          <p class="face-label">Side B</p>
+          <ol class="rows"></ol>
+        </article>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button type="button" id="prev" class="secondary square" aria-label="Previous card">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <button type="button" id="draw" class="primary">Draw a new card</button>
+      <button type="button" id="next" class="secondary square" aria-label="Next card">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+
+    <div class="tools">
+      <button type="button" id="roll" class="secondary roll">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="8.5" cy="8.5" r="1.4"/><circle cx="15.5" cy="15.5" r="1.4"/><circle cx="12" cy="12" r="1.4"/></svg>
+        <span id="rollLabel">Roll a number</span>
+      </button>
+      <p id="status" class="status" aria-live="polite"></p>
+    </div>
+
+    <ol class="howto" aria-label="How to play a turn">
+      <li>Draw a card.</li>
+      <li>Someone calls a number from 1 to 8, or tap <em>Roll a number</em>. Tap any number on the card to spotlight it.</li>
+      <li>Say the category out loud, then build your clue with the transparent cards.</li>
+    </ol>
+  </main>
+
+  <footer class="foot">
+    <p>Words you have already seen stay out of new cards on this device until the whole deck has come up. <button type="button" id="reset" class="link">Start the deck over</button></p>
+    <p>Unofficial fan-made cards. Imagine is a game by Gamewright; this site is not affiliated with them.</p>
+  </footer>
+</div>
+
+<dialog id="catsDialog" aria-labelledby="catsTitle">
+  <form method="dialog" class="sheet">
+    <div class="sheet-head">
+      <h2 id="catsTitle">Categories</h2>
+      <p>Choose what can show up on new cards.</p>
+      <div class="quick">
+        <button type="button" id="allCats" class="secondary small">Select all</button>
+        <button type="button" id="noCats" class="secondary small">Clear</button>
+      </div>
+    </div>
+    <div id="catGroups" class="groups"></div>
+    <div class="sheet-foot">
+      <p id="catHint" class="hint"></p>
+      <button type="submit" id="catsDone" class="primary">Done</button>
+    </div>
+  </form>
+</dialog>
+
+<noscript><p class="noscript">Reimagine needs JavaScript to shuffle and deal cards.</p></noscript>
+
+<script src="js/data/screen.js"></script>
+<script src="js/data/people.js"></script>
+<script src="js/data/online.js"></script>
+<script src="js/data/everyday.js"></script>
+<script src="js/data/food.js"></script>
+<script src="js/data/nature.js"></script>
+<script src="js/data/places.js"></script>
+<script src="js/data/play.js"></script>
+<script src="js/data/words.js"></script>
+<script src="js/data/stories.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
